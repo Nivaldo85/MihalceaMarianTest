@@ -18,4 +18,4 @@ In view-ul de detalii, imediat sub proprietatile unui movie, se va implementa un
 
 - un buton pentru inserarea acestuia.
 
-De indata ce se face inserarea, tabelul cu recenzii trebuie sa fie actualizat si sa afiseze si noua inregistrare inserata.
+De indata ce se face inserarea, tabelul cu recenzii trebuie sa fie actualizat si sa afiseze si noua inregistrare inserata.# MihalceaMarianTest

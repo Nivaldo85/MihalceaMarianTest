@@ -66,6 +66,7 @@ namespace Tema.Controllers
             }
 
             int pageSize = 3;
+            //returneaza lista paginta pentru paginare
             return View(await PaginatedList<Joc>.CreateAsync(jocuri.AsNoTracking(), pageNumber , pageSize));
 
             /* return _context.Joc != null ?
@@ -104,11 +105,14 @@ namespace Tema.Controllers
 
             //p.Add(model2Data);
             IEnumerable<Reviews> r = p;
+            /*returneaza model triplu : Jocuri IEnumerable de reviews pentru afisare lista de reviewuri si
+            review pentru adaugare review*/
             var combinedData = (model1Data, r,model3Data);
 
             return View(combinedData);
 
         }
+        //functie adaugare review
         [HttpPost]
         public async Task<IActionResult> AddReview(int id, string Autor, string Review)
         {
@@ -128,7 +132,7 @@ namespace Tema.Controllers
 
             _context.Reviews.Add(review);
             await _context.SaveChangesAsync();
-
+            //redirectioneaza catre details dupa ce adauga review
             return RedirectToAction("Details", new { id });
         }
 

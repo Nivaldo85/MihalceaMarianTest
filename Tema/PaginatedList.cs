@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Tema
 {
+    //folosit pentru paginare
     public class PaginatedList<T> : List<T>
     {
         public int PageIndex { get; private set; }
