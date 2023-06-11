@@ -1,0 +1,90 @@
+﻿@model (Tema.Models.Joc, IEnumerable<Tema.Models.Reviews>, Tema.Models.Reviews)
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Joc</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.Titlu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Titlu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.DataLansarii)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item1.DataLansarii)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.Gen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Gen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.Pret)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Pret)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Item1.Id">Edit</a>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              Autor
+            </th>
+            <th>Review </th>
+            <th>
+              Data
+            </th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Item2)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Review)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCompletarii)
+                </td>
+              
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-action="AddReview" asp-route-id="@Model.Item1.Id" method="post">
+    <div class="form-group">
+        <label for="Autor" class="control-label">Autor</label>
+        <input type="text" id="Autor" name="Autor" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Review" class="control-label">Review</label>
+        <textarea id="Review" name="Review" style="height:100px;" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Review</button>
+</form>

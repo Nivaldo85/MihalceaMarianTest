@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Tema.Models.Reviews>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCompletarii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Review)
+            </th>
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCompletarii)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Review)
+                </td>
+               
+               
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<div class="form-group">
+    <label ="Autor" class="control-label"></label>
+    <input ="Autor" class="form-control" />
+   
+</div>
+
+<div class="form-group">
+    <label ="Review" class="control-label"></label>
+    <input ="Review" class="form-control" />
+    
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Create" class="btn btn-primary" />
+</div>
+
